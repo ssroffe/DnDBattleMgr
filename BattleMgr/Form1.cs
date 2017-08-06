@@ -14,6 +14,8 @@ namespace BattleMgr
     public partial class Form1 : Form
     {
         List<Initiative> initiatives = new List<Initiative>();
+        List<Monster> monsters = new List<Monster>();
+
         public Form1()
         {
             InitializeComponent();
@@ -117,8 +119,27 @@ namespace BattleMgr
             {
                 addForm.LoadMstrCb();
                 var result = addForm.ShowDialog();
+                if (result == DialogResult.OK) {
+                    for (int i = 0; i < addForm.numGen; i++)
+                    {
+                        monsters.Add(addForm.mstrEntry);
+                        //Add monster information to form
+                    }
+                }
+                else if (result == DialogResult.Retry)
+                {
+                    GenerateCustomMonster();
+                }
             }
 
+        }
+
+        private void GenerateCustomMonster()
+        {
+            using (var addForm = new CustomMonster())
+            {
+
+            }
         }
     }
 }

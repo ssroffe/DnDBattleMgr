@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BattleMgr
 {
-    class Monster
+    public class Monster
     {
         public string name { get; set; }
         public string size { get; set; }
@@ -37,14 +37,14 @@ namespace BattleMgr
                 
     }
     
-    class SpecialAbility
+    public class SpecialAbility
     {
         public int attack_bonus { get; set; }
         public string desc { get; set; }
         public string name { get; set; }
     }
     
-    class Action
+    public class Action
     {
         public int attack_bonus { get; set; }
         public int damage_bonus { get; set; }
@@ -53,7 +53,7 @@ namespace BattleMgr
         public string name { get; set; }
     }
     
-    class LegendaryAction
+    public class LegendaryAction
     {
         public int attack_bonus { get; set; }
         public string desc { get; set; }

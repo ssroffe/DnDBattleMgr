@@ -45,24 +45,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 81);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 119);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 107);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 17);
+            this.label2.Size = new System.Drawing.Size(74, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Initiative:";
             // 
             // nameTb
             // 
-            this.nameTb.Location = new System.Drawing.Point(70, 78);
+            this.nameTb.Location = new System.Drawing.Point(70, 65);
             this.nameTb.Name = "nameTb";
             this.nameTb.Size = new System.Drawing.Size(219, 22);
             this.nameTb.TabIndex = 2;
@@ -70,15 +72,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 156);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.Size = new System.Drawing.Size(75, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Dex Mod:";
             // 
             // initUd
             // 
-            this.initUd.Location = new System.Drawing.Point(90, 117);
+            this.initUd.Location = new System.Drawing.Point(90, 105);
             this.initUd.Name = "initUd";
             this.initUd.Size = new System.Drawing.Size(65, 22);
             this.initUd.TabIndex = 4;
@@ -86,7 +89,7 @@
             // 
             // dexUd
             // 
-            this.dexUd.Location = new System.Drawing.Point(90, 154);
+            this.dexUd.Location = new System.Drawing.Point(90, 143);
             this.dexUd.Name = "dexUd";
             this.dexUd.Size = new System.Drawing.Size(65, 22);
             this.dexUd.TabIndex = 5;
@@ -94,9 +97,10 @@
             // 
             // okBtn
             // 
-            this.okBtn.Location = new System.Drawing.Point(12, 215);
+            this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.okBtn.Location = new System.Drawing.Point(12, 224);
             this.okBtn.Name = "okBtn";
-            this.okBtn.Size = new System.Drawing.Size(75, 23);
+            this.okBtn.Size = new System.Drawing.Size(80, 26);
             this.okBtn.TabIndex = 7;
             this.okBtn.Text = "OK";
             this.okBtn.UseVisualStyleBackColor = true;
@@ -104,9 +108,10 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(272, 215);
+            this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelBtn.Location = new System.Drawing.Point(280, 224);
             this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.Size = new System.Drawing.Size(79, 26);
             this.cancelBtn.TabIndex = 8;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
@@ -116,7 +121,7 @@
             // 
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.Location = new System.Drawing.Point(13, 13);
+            this.Title.Location = new System.Drawing.Point(12, 9);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(239, 46);
             this.Title.TabIndex = 9;
@@ -127,7 +132,7 @@
             this.errMsg.AutoSize = true;
             this.errMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errMsg.ForeColor = System.Drawing.Color.Red;
-            this.errMsg.Location = new System.Drawing.Point(9, 195);
+            this.errMsg.Location = new System.Drawing.Point(9, 184);
             this.errMsg.Name = "errMsg";
             this.errMsg.Size = new System.Drawing.Size(156, 17);
             this.errMsg.TabIndex = 10;
@@ -139,7 +144,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(359, 250);
+            this.ClientSize = new System.Drawing.Size(371, 262);
             this.Controls.Add(this.errMsg);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.cancelBtn);
