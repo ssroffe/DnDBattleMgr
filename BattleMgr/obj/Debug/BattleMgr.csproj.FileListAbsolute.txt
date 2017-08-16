@@ -11,3 +11,4 @@ C:\projects\csharp\BattleMgr\BattleMgr\obj\Debug\BattleMgr.pdb
 C:\projects\csharp\BattleMgr\BattleMgr\bin\Debug\Newtonsoft.Json.dll
 C:\projects\csharp\BattleMgr\BattleMgr\bin\Debug\Newtonsoft.Json.xml
 C:\projects\csharp\BattleMgr\BattleMgr\obj\Debug\BattleMgr.AddMstr.resources
+C:\projects\csharp\BattleMgr\BattleMgr\obj\Debug\BattleMgr.CustomMonster.resources

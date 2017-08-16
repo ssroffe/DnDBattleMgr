@@ -13,6 +13,8 @@ namespace BattleMgr
     public partial class CustomMonster : Form
     {
         public Monster custMstr = new Monster();
+        public int numGen = 1;
+        public bool autoInitRoll;
 
         public CustomMonster()
         {
@@ -58,5 +60,58 @@ namespace BattleMgr
         {
             charUd.Select(0, charUd.Text.Length);
         }
+
+        private void numGenUd_Enter(object sender, EventArgs e)
+        {
+            numGenUd.Select(0, numGenUd.Text.Length);
+        }
+
+        private void okBtn_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(nameTb.Text))
+            {
+                autoInitRoll = autoInit.Checked;
+                numGen = Convert.ToInt32(numGenUd.Value);
+                custMstr.name = nameTb.Text;
+                custMstr.hit_points = Convert.ToInt32(hpUd.Value);
+                custMstr.hit_dice = hitDiceTb.Text;
+                custMstr.speed = speedTb.Text;
+                custMstr.armor_class = Convert.ToInt32(acUd.Value);
+                custMstr.strength = Convert.ToInt32(strUd.Value);
+                custMstr.dexterity = Convert.ToInt32(dexUd.Value);
+                custMstr.constitution = Convert.ToInt32(consUd.Value);
+                custMstr.intelligence = Convert.ToInt32(intUd.Value);
+                custMstr.wisdom = Convert.ToInt32(wisUd.Value);
+                custMstr.charisma = Convert.ToInt32(charUd.Value);
+                custMstr.senses = sensesTb.Text;
+                custMstr.damage_immunities = dmgImmTb.Text;
+                custMstr.damage_resistances = dmgResTb.Text;
+                custMstr.damage_vulnerabilities = dmgVulnTb.Text;
+                custMstr.condition_immunities = condImmTb.Text;
+                custMstr.notes = notesTb.Text;
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                errMsg.Visible = true;
+                var t = new Timer();
+                t.Interval = 3000;
+                t.Tick += (s, v) =>
+                {
+                    errMsg.Visible = false;
+                    t.Stop();
+                };
+                t.Start();
+            }
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
     }
 }

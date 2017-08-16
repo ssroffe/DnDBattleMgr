@@ -34,6 +34,41 @@ namespace BattleMgr
         public List<SpecialAbility> special_abilities { get; set; }
         public List<Action> actions { get; set; }
         public List<LegendaryAction> legendary_actions { get; set; }
+
+        public Monster()
+        {
+
+        }
+
+        public Monster(Monster m)
+        {
+            name = m.name;
+            size = m.size;
+            type = m.type;
+            subtype = m.subtype;
+            alignment = m.alignment;
+            armor_class = m.armor_class;
+            hit_points = m.hit_points;
+            hit_dice = m.hit_dice;
+            speed = m.speed;
+            strength = m.strength;
+            dexterity = m.dexterity;
+            constitution = m.constitution;
+            intelligence = m.intelligence;
+            wisdom = m.wisdom;
+            charisma = m.charisma;
+            damage_vulnerabilities = m.damage_vulnerabilities;
+            damage_resistances = m.damage_resistances;
+            damage_immunities = m.damage_immunities;
+            condition_immunities = m.condition_immunities;
+            senses = m.senses;
+            languages = m.languages;
+            challenge_rating = m.challenge_rating;
+            notes = m.notes;
+            special_abilities = m.special_abilities;
+            actions = m.actions;
+            legendary_actions = m.legendary_actions;
+        }
                 
     }
     

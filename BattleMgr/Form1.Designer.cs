@@ -41,6 +41,10 @@
             this.clearMstr = new System.Windows.Forms.Button();
             this.rmMstr = new System.Windows.Forms.CheckBox();
             this.addMstrBtn = new System.Windows.Forms.Button();
+            this.mstrPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabCtl.SuspendLayout();
             this.initTab.SuspendLayout();
             this.monsterTab.SuspendLayout();
@@ -158,6 +162,10 @@
             // 
             // monsterTab
             // 
+            this.monsterTab.Controls.Add(this.label3);
+            this.monsterTab.Controls.Add(this.label2);
+            this.monsterTab.Controls.Add(this.label1);
+            this.monsterTab.Controls.Add(this.mstrPanel);
             this.monsterTab.Controls.Add(this.clearMstr);
             this.monsterTab.Controls.Add(this.rmMstr);
             this.monsterTab.Controls.Add(this.addMstrBtn);
@@ -173,18 +181,19 @@
             // clearMstr
             // 
             this.clearMstr.Location = new System.Drawing.Point(220, 6);
-            this.clearMstr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clearMstr.Margin = new System.Windows.Forms.Padding(4);
             this.clearMstr.Name = "clearMstr";
             this.clearMstr.Size = new System.Drawing.Size(100, 28);
             this.clearMstr.TabIndex = 2;
             this.clearMstr.Text = "Clear";
             this.clearMstr.UseVisualStyleBackColor = true;
+            this.clearMstr.Click += new System.EventHandler(this.clearMstr_Click);
             // 
             // rmMstr
             // 
             this.rmMstr.Appearance = System.Windows.Forms.Appearance.Button;
             this.rmMstr.Location = new System.Drawing.Point(112, 6);
-            this.rmMstr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rmMstr.Margin = new System.Windows.Forms.Padding(4);
             this.rmMstr.Name = "rmMstr";
             this.rmMstr.Size = new System.Drawing.Size(100, 28);
             this.rmMstr.TabIndex = 1;
@@ -195,13 +204,53 @@
             // addMstrBtn
             // 
             this.addMstrBtn.Location = new System.Drawing.Point(7, 6);
-            this.addMstrBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addMstrBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addMstrBtn.Name = "addMstrBtn";
             this.addMstrBtn.Size = new System.Drawing.Size(100, 28);
             this.addMstrBtn.TabIndex = 0;
             this.addMstrBtn.Text = "Add";
             this.addMstrBtn.UseVisualStyleBackColor = true;
             this.addMstrBtn.Click += new System.EventHandler(this.addMstrBtn_Click);
+            // 
+            // mstrPanel
+            // 
+            this.mstrPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mstrPanel.Location = new System.Drawing.Point(7, 58);
+            this.mstrPanel.Name = "mstrPanel";
+            this.mstrPanel.Size = new System.Drawing.Size(586, 482);
+            this.mstrPanel.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(157, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "HP";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(229, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Info";
             // 
             // Form1
             // 
@@ -216,6 +265,7 @@
             this.initTab.ResumeLayout(false);
             this.initTab.PerformLayout();
             this.monsterTab.ResumeLayout(false);
+            this.monsterTab.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -235,6 +285,10 @@
         private System.Windows.Forms.Button clearMstr;
         private System.Windows.Forms.CheckBox rmMstr;
         private System.Windows.Forms.Button addMstrBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel mstrPanel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
 

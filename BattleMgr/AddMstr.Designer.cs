@@ -37,6 +37,7 @@
             this.okBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.errMsg = new System.Windows.Forms.Label();
+            this.autoInit = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numGenUd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +106,7 @@
             // okBtn
             // 
             this.okBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.okBtn.Location = new System.Drawing.Point(13, 242);
+            this.okBtn.Location = new System.Drawing.Point(13, 284);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(83, 29);
             this.okBtn.TabIndex = 6;
@@ -116,7 +117,7 @@
             // cancelBtn
             // 
             this.cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelBtn.Location = new System.Drawing.Point(313, 242);
+            this.cancelBtn.Location = new System.Drawing.Point(337, 284);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(83, 29);
             this.cancelBtn.TabIndex = 7;
@@ -130,18 +131,29 @@
             this.errMsg.AutoSize = true;
             this.errMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errMsg.ForeColor = System.Drawing.Color.Red;
-            this.errMsg.Location = new System.Drawing.Point(12, 212);
+            this.errMsg.Location = new System.Drawing.Point(12, 254);
             this.errMsg.Name = "errMsg";
             this.errMsg.Size = new System.Drawing.Size(175, 17);
             this.errMsg.TabIndex = 8;
             this.errMsg.Text = "Please input a Monster";
             this.errMsg.Visible = false;
             // 
+            // autoInit
+            // 
+            this.autoInit.AutoSize = true;
+            this.autoInit.Location = new System.Drawing.Point(20, 212);
+            this.autoInit.Name = "autoInit";
+            this.autoInit.Size = new System.Drawing.Size(150, 21);
+            this.autoInit.TabIndex = 9;
+            this.autoInit.Text = "Auto Roll Initiative?";
+            this.autoInit.UseVisualStyleBackColor = true;
+            // 
             // AddMstr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 283);
+            this.ClientSize = new System.Drawing.Size(432, 325);
+            this.Controls.Add(this.autoInit);
             this.Controls.Add(this.errMsg);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.okBtn);
@@ -171,5 +183,6 @@
         private System.Windows.Forms.Button okBtn;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Label errMsg;
+        private System.Windows.Forms.CheckBox autoInit;
     }
 }

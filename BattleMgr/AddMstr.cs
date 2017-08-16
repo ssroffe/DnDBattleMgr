@@ -16,8 +16,9 @@ namespace BattleMgr
     public partial class AddMstr : Form
     {
         private List<Monster> mstrList;
-        public Monster mstrEntry;
+        public Monster mstrEntry = new Monster();
         public int numGen = 0;
+        public bool autoInitRoll = false;
 
         public void LoadMstrCb()
         {
@@ -41,7 +42,8 @@ namespace BattleMgr
         {
             if (!String.IsNullOrEmpty(mstrCb.Text))
             {
-                mstrEntry = mstrList.Where<Monster>(f => f.name.Equals(mstrCb.SelectedValue)).FirstOrDefault<Monster>();
+                mstrEntry = mstrList.FirstOrDefault<Monster>(o => o.name == mstrCb.Text);
+                autoInitRoll = autoInit.Checked;
                 numGen = Convert.ToInt32(numGenUd.Value);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
