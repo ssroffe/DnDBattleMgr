@@ -23,14 +23,20 @@ namespace BattleMgr
         public void LoadMstrCb()
         {
             string json;
-            using (StreamReader r = new StreamReader("../../data/monsters.json"))
+            try
             {
-                json = r.ReadToEnd();
-            }
-            mstrList = JsonConvert.DeserializeObject<List<Monster>>(json);
-            foreach (Monster mstr in mstrList)
+                using (StreamReader r = new StreamReader("data/monsters.json"))
+                {
+                    json = r.ReadToEnd();
+                }
+                mstrList = JsonConvert.DeserializeObject<List<Monster>>(json);
+                foreach (Monster mstr in mstrList)
+                {
+                    mstrCb.Items.Add(mstr.name);
+                }
+            } catch (FileNotFoundException)
             {
-                mstrCb.Items.Add(mstr.name);
+                
             }
         }
         public AddMstr()
@@ -42,11 +48,27 @@ namespace BattleMgr
         {
             if (!String.IsNullOrEmpty(mstrCb.Text))
             {
-                mstrEntry = mstrList.FirstOrDefault<Monster>(o => o.name == mstrCb.Text);
-                autoInitRoll = autoInit.Checked;
-                numGen = Convert.ToInt32(numGenUd.Value);
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                try
+                {
+                    mstrEntry = mstrList.FirstOrDefault<Monster>(o => o.name == mstrCb.Text);
+                    autoInitRoll = autoInit.Checked;
+                    numGen = Convert.ToInt32(numGenUd.Value);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                catch (NullReferenceException ne)
+                {
+                    errMsg.Visible = true;
+                    var t = new Timer();
+                    t.Interval = 3000;
+                    t.Tick += (s, v) =>
+                    {
+                        errMsg.Visible = false;
+                        t.Stop();
+                    };
+                    t.Start();
+                }
+
             }
             else
             {

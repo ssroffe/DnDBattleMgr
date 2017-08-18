@@ -339,6 +339,7 @@
             this.errMsg.Size = new System.Drawing.Size(156, 17);
             this.errMsg.TabIndex = 29;
             this.errMsg.Text = "Please input a name";
+            this.errMsg.Visible = false;
             // 
             // label10
             // 

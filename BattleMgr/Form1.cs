@@ -26,16 +26,25 @@ namespace BattleMgr
             initPanel.Controls.Clear();
             for (int i = 0; i < initiatives.Count; i++)
             {
-                Label namelbl = new Label();
+                TextBox namelbl = new TextBox();
+                namelbl.ReadOnly = true;
                 namelbl.Text = initiatives[i].name;
                 initPanel.Controls.Add(namelbl);
 
-                Label initlbl = new Label();
-                initlbl.Text = initiatives[i].init.ToString();
+                NumericUpDown initlbl = new NumericUpDown();
+                initlbl.ReadOnly = true;
+                initlbl.Value = Convert.ToInt32(initiatives[i].init);
+                initlbl.Width = 50;
+                initlbl.Maximum = 100;
+                initlbl.Minimum = -100;
                 initPanel.Controls.Add(initlbl);
 
-                Label dexlbl = new Label();
-                dexlbl.Text = initiatives[i].dex.ToString();
+                NumericUpDown dexlbl = new NumericUpDown();
+                dexlbl.ReadOnly = true;
+                dexlbl.Width = 50;
+                dexlbl.Maximum = 100;
+                dexlbl.Minimum = -100;
+                dexlbl.Value = Convert.ToInt32(initiatives[i].dex);
                 initPanel.Controls.Add(dexlbl);
 
                 //newline part
@@ -48,21 +57,42 @@ namespace BattleMgr
             mstrPanel.Controls.Clear();
             for (int i = 0; i < monsters.Count; i++)
             {
-                Label namelbl = new Label();
-                namelbl.Text = monsters[i].name;
+                Monster mstr = monsters[i];
+
+                TextBox namelbl = new TextBox();
+                namelbl.ReadOnly = true;
+                namelbl.Text = mstr.name;
                 mstrPanel.Controls.Add(namelbl);
 
                 NumericUpDown hpUd = new NumericUpDown();
                 hpUd.Maximum = 1000;
                 hpUd.Minimum = 0;
                 hpUd.Width = 50;
-                hpUd.Value = monsters[i].hit_points;
+                hpUd.Value = mstr.currHP;
                 mstrPanel.Controls.Add(hpUd);
+                hpUd.ValueChanged += (s, ea) =>
+                {
+                    mstr.currHP = Convert.ToInt32(hpUd.Value);
+                };
+
+                TextBox currcond = new TextBox();
+                currcond.Width = 150;
+                mstrPanel.Controls.Add(currcond);
 
                 Button infoBtn = new Button();
                 infoBtn.Text = "...";
                 infoBtn.Width = 30;
                 mstrPanel.Controls.Add(infoBtn);
+
+                infoBtn.Click += (s, ea) =>
+                {
+                    MonsterInfo mstrInfo = new MonsterInfo();
+                    mstrInfo.m = mstr;
+                    mstrInfo.SetupMonsterInfo();
+                    mstrInfo.Show();
+                };
+
+
 
                 //newline part
                 mstrPanel.SetFlowBreak(infoBtn, true);
@@ -92,6 +122,7 @@ namespace BattleMgr
         private void clearBtn_Click(object sender, EventArgs e)
         {
             initiatives.Clear();
+            ReloadInitiative();
         }
 
         private void removeCb_CheckedChanged(object sender, EventArgs e)
@@ -102,24 +133,43 @@ namespace BattleMgr
                 for (int i = 0; i < initiatives.Count; i++)
                 {
                     Initiative currInitiative = initiatives[i];
-                    Button rm = new Button();
-                    rm.Text = "Remove:";
-                    rm.AutoSize = true;
-                    initPanel.Controls.Add(rm);
 
-                    Label namelbl = new Label();
+
+                    TextBox namelbl = new TextBox();
+                    namelbl.ReadOnly = true;
                     namelbl.Text = initiatives[i].name;
                     initPanel.Controls.Add(namelbl);
 
-                    Label initlbl = new Label();
-                    initlbl.Text = initiatives[i].init.ToString();
+                    NumericUpDown initlbl = new NumericUpDown();
+                    initlbl.ReadOnly = true;
+                    initlbl.Width = 50;
+                    initlbl.Maximum = 100;
+                    initlbl.Minimum = -100;
+                    initlbl.Value = Convert.ToInt32(initiatives[i].init);
                     initPanel.Controls.Add(initlbl);
 
-                    Label dexlbl = new Label();
-                    dexlbl.Text = initiatives[i].dex.ToString();
+                    NumericUpDown dexlbl = new NumericUpDown();
+                    dexlbl.ReadOnly = true;
+                    dexlbl.Width = 50;
+                    dexlbl.Maximum = 100;
+                    dexlbl.Minimum = -100;
+                    dexlbl.Value = Convert.ToInt32(initiatives[i].dex);
                     initPanel.Controls.Add(dexlbl);
                     //newline part              
-                    initPanel.SetFlowBreak(dexlbl, true);
+
+
+                    Button rm = new Button();
+                    try
+                    {
+                        rm.Image = Image.FromFile("data/remove-icon.ico");
+                    }
+                    catch (Exception)
+                    {
+                        rm.Text = "Remove";
+                    }                      
+                    rm.Width = 25;
+                    initPanel.Controls.Add(rm);
+                    initPanel.SetFlowBreak(rm, true);
                     rm.Click += (s, ea) =>
                     {
                         initiatives.Remove(currInitiative);
@@ -128,7 +178,6 @@ namespace BattleMgr
                         initPanel.Controls.Remove(initlbl);
                         initPanel.Controls.Remove(dexlbl);
                     };
-
                 }
 
             }
@@ -190,6 +239,7 @@ namespace BattleMgr
                         }
                         monsters.Add(monst);
                     }
+                    ReloadMonsters();
                 }
             }
         }
@@ -201,8 +251,8 @@ namespace BattleMgr
             int roll = rnd.Next(1, 21);
             Initiative init = new Initiative();
             init.name = m.name;
-            init.init = roll;
             init.dex = dexMod;
+            init.init = roll + dexMod;
             initiatives.Add(init);
             ReloadInitiative();
 
@@ -217,6 +267,76 @@ namespace BattleMgr
         private void clearMstr_Click(object sender, EventArgs e)
         {
             monsters.Clear();
+            ReloadMonsters();
+        }
+
+        private void rmMstr_CheckedChanged(object sender, EventArgs e)
+        {
+            mstrPanel.Controls.Clear();
+            if (rmMstr.Checked)
+            {
+                for (int i = 0; i < monsters.Count; i++)
+                {
+                    Monster currMstr = monsters[i];
+
+
+                    TextBox namelbl = new TextBox();
+                    namelbl.ReadOnly = true;
+                    namelbl.Text = currMstr.name;
+                    mstrPanel.Controls.Add(namelbl);
+
+                    NumericUpDown hpUd = new NumericUpDown();
+                    hpUd.Maximum = 1000;
+                    hpUd.Minimum = 0;
+                    hpUd.Width = 50;
+                    hpUd.Value = currMstr.currHP;
+                    mstrPanel.Controls.Add(hpUd);
+
+                    hpUd.ValueChanged += (s, ea) =>
+                    {
+                        currMstr.currHP = Convert.ToInt32(hpUd.Value);
+                    };
+
+                    TextBox currcond = new TextBox();
+                    currcond.Width = 150;
+                    mstrPanel.Controls.Add(currcond);
+
+                    Button infoBtn = new Button();
+                    infoBtn.Text = "...";
+                    infoBtn.Width = 30;
+                    mstrPanel.Controls.Add(infoBtn);
+
+                    infoBtn.Click += (s, ea) =>
+                    {
+                        MonsterInfo mstrInfo = new MonsterInfo();
+                        mstrInfo.m = currMstr;
+                        mstrInfo.SetupMonsterInfo();
+                        mstrInfo.Show();
+                    };
+
+                    Button rm = new Button();
+                    rm.Image = Image.FromFile("data/remove-icon.ico");
+                    rm.Width = 25;
+                    mstrPanel.Controls.Add(rm);
+
+                    mstrPanel.SetFlowBreak(rm, true);
+                    rm.Click += (s, ea) =>
+                    {
+                        monsters.Remove(currMstr);
+                        mstrPanel.Controls.Remove(rm);
+                        mstrPanel.Controls.Remove(namelbl);
+                        mstrPanel.Controls.Remove(hpUd);
+                        mstrPanel.Controls.Remove(currcond);
+                        mstrPanel.Controls.Remove(infoBtn);
+                    };
+
+                }
+
+            }
+            else
+            {
+                ReloadMonsters();
+            }
         }
     }
 }

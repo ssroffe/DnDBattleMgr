@@ -15,6 +15,7 @@ namespace BattleMgr
         public string alignment { get; set; }
         public int armor_class { get; set; }
         public int hit_points { get; set; }
+        public int currHP { get; set; }
         public string hit_dice { get; set; }
         public string speed { get; set; }
         public int strength { get; set; }
@@ -49,6 +50,7 @@ namespace BattleMgr
             alignment = m.alignment;
             armor_class = m.armor_class;
             hit_points = m.hit_points;
+            currHP = m.hit_points;
             hit_dice = m.hit_dice;
             speed = m.speed;
             strength = m.strength;
@@ -77,6 +79,10 @@ namespace BattleMgr
         public int attack_bonus { get; set; }
         public string desc { get; set; }
         public string name { get; set; }
+        public string print()
+        {
+            return name + ": attack bonus: " + attack_bonus + Environment.NewLine + desc;
+        }
     }
     
     public class Action
@@ -86,6 +92,10 @@ namespace BattleMgr
         public string damage_dice { get; set; }
         public string desc { get; set; }
         public string name { get; set; }
+        public string print()
+        {
+            return name + ": attack bonus: " + attack_bonus + " damage bonus: " + damage_bonus + " damage dice: " + damage_dice + Environment.NewLine + desc;
+        }
     }
     
     public class LegendaryAction
@@ -93,5 +103,9 @@ namespace BattleMgr
         public int attack_bonus { get; set; }
         public string desc { get; set; }
         public string name { get; set; }
+        public string print()
+        {
+            return name + ": attack bonus: " + attack_bonus + Environment.NewLine + desc;
+        }
     }
 }

@@ -89,6 +89,9 @@ namespace BattleMgr
                 custMstr.damage_vulnerabilities = dmgVulnTb.Text;
                 custMstr.condition_immunities = condImmTb.Text;
                 custMstr.notes = notesTb.Text;
+                custMstr.actions = new List<Action>();
+                custMstr.special_abilities = new List<SpecialAbility>();
+                custMstr.legendary_actions = new List<LegendaryAction>();
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

@@ -9,21 +9,21 @@ for key in data:
         tmp = data[key]['legendary_actions']
         #tmp = data[key]['special_abilities']
     except KeyError as e:
-        tmpData[key][e.args[0]] = ""
+        tmpData[key][e.args[0]] = []
         
 for key in tmpData:
     try:
         #tmp = data[key]['legendary_actions']
         tmp = data[key]['special_abilities']
     except KeyError as e:
-        tmpData[key][e.args[0]] = ""
+        tmpData[key][e.args[0]] = []
 
 for key in tmpData:
     try:
         #tmp = data[key]['legendary_actions']
         tmp = data[key]['actions']
     except KeyError as e:
-        tmpData[key][e.args[0]] = ""
+        tmpData[key][e.args[0]] = []
 
 for key in tmpData:
     try:

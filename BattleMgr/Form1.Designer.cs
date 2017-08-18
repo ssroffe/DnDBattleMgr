@@ -38,13 +38,14 @@
             this.nameTitleLabel = new System.Windows.Forms.Label();
             this.initPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.monsterTab = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.mstrPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.clearMstr = new System.Windows.Forms.Button();
             this.rmMstr = new System.Windows.Forms.CheckBox();
             this.addMstrBtn = new System.Windows.Forms.Button();
-            this.mstrPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.tabCtl.SuspendLayout();
             this.initTab.SuspendLayout();
             this.monsterTab.SuspendLayout();
@@ -121,7 +122,7 @@
             // 
             this.dexTitleLabel.AutoSize = true;
             this.dexTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dexTitleLabel.Location = new System.Drawing.Point(263, 38);
+            this.dexTitleLabel.Location = new System.Drawing.Point(217, 38);
             this.dexTitleLabel.Name = "dexTitleLabel";
             this.dexTitleLabel.Size = new System.Drawing.Size(70, 17);
             this.dexTitleLabel.TabIndex = 6;
@@ -131,7 +132,7 @@
             // 
             this.initTitleLabel.AutoSize = true;
             this.initTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.initTitleLabel.Location = new System.Drawing.Point(125, 38);
+            this.initTitleLabel.Location = new System.Drawing.Point(148, 38);
             this.initTitleLabel.Name = "initTitleLabel";
             this.initTitleLabel.Size = new System.Drawing.Size(63, 17);
             this.initTitleLabel.TabIndex = 5;
@@ -162,6 +163,7 @@
             // 
             // monsterTab
             // 
+            this.monsterTab.Controls.Add(this.label4);
             this.monsterTab.Controls.Add(this.label3);
             this.monsterTab.Controls.Add(this.label2);
             this.monsterTab.Controls.Add(this.label1);
@@ -177,6 +179,56 @@
             this.monsterTab.TabIndex = 1;
             this.monsterTab.Text = "Monsters";
             this.monsterTab.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(229, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 17);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Curr. Condition";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(434, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 17);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Info";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(157, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "HP";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Name";
+            // 
+            // mstrPanel
+            // 
+            this.mstrPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mstrPanel.Location = new System.Drawing.Point(7, 58);
+            this.mstrPanel.Name = "mstrPanel";
+            this.mstrPanel.Size = new System.Drawing.Size(586, 482);
+            this.mstrPanel.TabIndex = 3;
             // 
             // clearMstr
             // 
@@ -200,6 +252,7 @@
             this.rmMstr.Text = "Remove";
             this.rmMstr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rmMstr.UseVisualStyleBackColor = true;
+            this.rmMstr.CheckedChanged += new System.EventHandler(this.rmMstr_CheckedChanged);
             // 
             // addMstrBtn
             // 
@@ -211,46 +264,6 @@
             this.addMstrBtn.Text = "Add";
             this.addMstrBtn.UseVisualStyleBackColor = true;
             this.addMstrBtn.Click += new System.EventHandler(this.addMstrBtn_Click);
-            // 
-            // mstrPanel
-            // 
-            this.mstrPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mstrPanel.Location = new System.Drawing.Point(7, 58);
-            this.mstrPanel.Name = "mstrPanel";
-            this.mstrPanel.Size = new System.Drawing.Size(586, 482);
-            this.mstrPanel.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(157, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "HP";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(229, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Info";
             // 
             // Form1
             // 
@@ -289,6 +302,7 @@
         private System.Windows.Forms.FlowLayoutPanel mstrPanel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }
 
