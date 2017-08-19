@@ -133,9 +133,9 @@
             this.errMsg.ForeColor = System.Drawing.Color.Red;
             this.errMsg.Location = new System.Drawing.Point(12, 254);
             this.errMsg.Name = "errMsg";
-            this.errMsg.Size = new System.Drawing.Size(175, 17);
+            this.errMsg.Size = new System.Drawing.Size(216, 17);
             this.errMsg.TabIndex = 8;
-            this.errMsg.Text = "Please input a Monster";
+            this.errMsg.Text = "Please input a Valid Monster";
             this.errMsg.Visible = false;
             // 
             // autoInit

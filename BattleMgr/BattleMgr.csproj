@@ -89,6 +89,12 @@
     <Compile Include="AddMstr.Designer.cs">
       <DependentUpon>AddMstr.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmClear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmClear.Designer.cs">
+      <DependentUpon>ConfirmClear.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomMonster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddMstr.resx">
       <DependentUpon>AddMstr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmClear.resx">
+      <DependentUpon>ConfirmClear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomMonster.resx">
       <DependentUpon>CustomMonster.cs</DependentUpon>

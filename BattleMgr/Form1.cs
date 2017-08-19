@@ -121,8 +121,16 @@ namespace BattleMgr
 
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            initiatives.Clear();
-            ReloadInitiative();
+            using (var addForm = new ConfirmClear())
+            {
+                var result = addForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    initiatives.Clear();
+                    ReloadInitiative();
+                }
+            }
+
         }
 
         private void removeCb_CheckedChanged(object sender, EventArgs e)
@@ -266,8 +274,15 @@ namespace BattleMgr
 
         private void clearMstr_Click(object sender, EventArgs e)
         {
-            monsters.Clear();
-            ReloadMonsters();
+            using (var addForm = new ConfirmClear())
+            {
+                var result = addForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    monsters.Clear();
+                    ReloadMonsters();
+                }
+            }
         }
 
         private void rmMstr_CheckedChanged(object sender, EventArgs e)

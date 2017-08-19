@@ -82,6 +82,11 @@
             // initUd
             // 
             this.initUd.Location = new System.Drawing.Point(90, 105);
+            this.initUd.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            -2147483648});
             this.initUd.Name = "initUd";
             this.initUd.Size = new System.Drawing.Size(65, 22);
             this.initUd.TabIndex = 4;
@@ -90,6 +95,11 @@
             // dexUd
             // 
             this.dexUd.Location = new System.Drawing.Point(90, 143);
+            this.dexUd.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.dexUd.Name = "dexUd";
             this.dexUd.Size = new System.Drawing.Size(65, 22);
             this.dexUd.TabIndex = 5;

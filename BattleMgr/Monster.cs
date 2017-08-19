@@ -38,6 +38,33 @@ namespace BattleMgr
 
         public Monster()
         {
+            name = "";
+            size = "";
+            type = "";
+            subtype = "";
+            alignment = "";
+            armor_class = 0;
+            hit_points = 0;
+            currHP = 0;
+            hit_dice = "";
+            speed = "";
+            strength = 0;
+            dexterity = 0;
+            constitution = 0;
+            intelligence = 0;
+            wisdom = 0;
+            charisma = 0;
+            damage_vulnerabilities = "";
+            damage_resistances = "";
+            damage_immunities = "";
+            condition_immunities = "";
+            senses = "";
+            languages = "";
+            challenge_rating = 0;
+            notes = "";
+            special_abilities = new List<SpecialAbility>();
+            actions = new List<Action>();
+            legendary_actions = new List<LegendaryAction>();
 
         }
 

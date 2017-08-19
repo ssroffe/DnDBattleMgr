@@ -16,6 +16,6 @@ C:\projects\csharp\BattleMgr\BattleMgr\bin\Release\BattleMgr.exe.manifest
 C:\projects\csharp\BattleMgr\BattleMgr\bin\Release\BattleMgr.application
 C:\projects\csharp\BattleMgr\BattleMgr\obj\Release\BattleMgr.exe.manifest
 C:\projects\csharp\BattleMgr\BattleMgr\obj\Release\BattleMgr.application
-C:\projects\csharp\BattleMgr\BattleMgr\obj\Release\BattleMgr.csprojResolveAssemblyReference.cache
 C:\projects\csharp\BattleMgr\BattleMgr\bin\Release\data\monsters.json
 C:\projects\csharp\BattleMgr\BattleMgr\bin\Release\data\remove-icon.ico
+C:\projects\csharp\BattleMgr\BattleMgr\obj\Release\BattleMgr.ConfirmClear.resources

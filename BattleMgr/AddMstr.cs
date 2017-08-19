@@ -48,15 +48,15 @@ namespace BattleMgr
         {
             if (!String.IsNullOrEmpty(mstrCb.Text))
             {
-                try
+                mstrEntry = mstrList.FirstOrDefault<Monster>(o => o.name == mstrCb.Text);
+                if (mstrEntry != null)
                 {
-                    mstrEntry = mstrList.FirstOrDefault<Monster>(o => o.name == mstrCb.Text);
                     autoInitRoll = autoInit.Checked;
                     numGen = Convert.ToInt32(numGenUd.Value);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
-                catch (NullReferenceException ne)
+                else
                 {
                     errMsg.Visible = true;
                     var t = new Timer();
@@ -68,7 +68,6 @@ namespace BattleMgr
                     };
                     t.Start();
                 }
-
             }
             else
             {
